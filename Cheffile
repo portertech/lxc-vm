@@ -3,5 +3,6 @@
 
 site "http://community.opscode.com/api/v1"
 
-cookbook "docker"
+cookbook "apt"
 cookbook "ruby_installer"
+cookbook "modules"

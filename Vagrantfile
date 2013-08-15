@@ -19,9 +19,7 @@ Vagrant.configure("2") do |config|
 
   config.vm.provision :chef_solo do |chef|
     chef.cookbooks_path = ["cookbooks", "site-cookbooks"]
-    chef.add_recipe "ruby_installer"
     chef.add_recipe "packages"
-    chef.add_recipe "docker"
   end
 
   config.vm.synced_folder "~/.ssh", "/home/vagrant/.ssh"

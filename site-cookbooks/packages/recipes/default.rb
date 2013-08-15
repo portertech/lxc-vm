@@ -18,7 +18,13 @@
 #
 
 include_recipe "apt"
+include_recipe "ruby_installer"
 
+package "tmux"
+package "git"
+gem_package "bundler"
+
+## Emacs
 apt_repository "cassou-emacs" do
   uri "http://ppa.launchpad.net/cassou/emacs/ubuntu"
   distribution node.lsb.codename
@@ -28,4 +34,18 @@ apt_repository "cassou-emacs" do
 end
 
 package "emacs24"
-package "tmux"
+
+## Docker (LXC)
+modules "aufs" do
+  action :load
+end
+
+apt_repository "docker" do
+  uri "http://ppa.launchpad.net/dotcloud/lxc-docker/ubuntu"
+  distribution node["lsb"]["codename"]
+  components ["main"]
+end
+
+package "lxc-docker" do
+  options "--force-yes"
+end
