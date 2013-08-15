@@ -1,7 +1,7 @@
 SITE
   remote: http://community.opscode.com/api/v1
   specs:
-    apt (2.0.0)
+    apt (2.1.0)
     build-essential (1.4.0)
     chef_handler (1.1.4)
     dmg (1.1.0)
@@ -20,6 +20,8 @@ SITE
       yum (>= 0.0.0)
     golang (1.1.1)
       git (>= 0.0.0)
+    lxc (1.1.0)
+      dpkg_autostart (~> 0.1.6)
     modules (0.1.2)
     ruby_installer (0.1.2)
       build-essential (>= 0.0.0)
@@ -30,16 +32,7 @@ SITE
       chef_handler (>= 0.0.0)
     yum (2.3.0)
 
-GIT
-  remote: https://github.com/hw-cookbooks/lxc.git
-  ref: develop
-  sha: 59dbe293141afd2ad6e30c3411876be53f79e06a
-  specs:
-    lxc (1.0.1)
-      dpkg_autostart (~> 0.1.2)
-
 DEPENDENCIES
   docker (>= 0)
-  lxc (>= 0)
   ruby_installer (>= 0)
 

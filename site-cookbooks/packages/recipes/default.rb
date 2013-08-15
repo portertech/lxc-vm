@@ -18,7 +18,6 @@
 #
 
 include_recipe "apt"
-include_recipe "ruby"
 
 apt_repository "cassou-emacs" do
   uri "http://ppa.launchpad.net/cassou/emacs/ubuntu"
@@ -30,5 +29,3 @@ end
 
 package "emacs24"
 package "tmux"
-
-gem_package "vagabond"
