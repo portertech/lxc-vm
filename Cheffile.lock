@@ -4,11 +4,13 @@ SITE
     apt (2.1.0)
     build-essential (1.4.0)
     modules (0.1.2)
+    ntp (1.4.0)
     ruby_installer (0.1.2)
       build-essential (>= 0.0.0)
 
 DEPENDENCIES
   apt (>= 0)
   modules (>= 0)
+  ntp (>= 0)
   ruby_installer (>= 0)
 

@@ -18,10 +18,18 @@
 #
 
 include_recipe "apt"
+include_recipe "ntp"
 include_recipe "ruby_installer"
 
-package "tmux"
-package "git"
+%w[
+  tmux
+  git
+  libxml2-dev
+  libxslt-dev
+].each do |pkg|
+  package pkg
+end
+
 gem_package "bundler"
 
 ## Emacs

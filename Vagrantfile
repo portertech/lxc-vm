@@ -6,8 +6,8 @@ SCRIPT
 
 Vagrant.configure("2") do |config|
   config.vm.hostname = "lxc"
-  config.vm.box = "opscode-ubuntu-13.04-provisionerless"
-  config.vm.box_url = "https://opscode-vm.s3.amazonaws.com/vagrant/opscode_ubuntu-13.04_provisionerless.box"
+  config.vm.box = "opscode-ubuntu-12.10-provisionerless"
+  config.vm.box_url = "https://opscode-vm.s3.amazonaws.com/vagrant/opscode_ubuntu-12.10_provisionerless.box"
 
   config.vm.provider :virtualbox do |vb|
     vb.customize ["modifyvm", :id, "--name", "lxc"]
