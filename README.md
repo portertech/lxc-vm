@@ -9,3 +9,17 @@ Using synced folders, the following are available within the VM:
 - `~/projects`
 
 The VM is intended to be ephemeral.
+
+## Dependencies
+
+- Ruby >= 1.9
+- [Vagrant](http://downloads.vagrantup.com/)
+- [VirtualBox](https://www.virtualbox.org/wiki/Downloads)
+
+## Usage
+
+```
+bundle install
+librarian-chef install
+vagrant up
+```
