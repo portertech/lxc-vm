@@ -19,16 +19,15 @@
 
 include_recipe "apt"
 include_recipe "ntp"
+
+node.override["ruby_installer"]["method"] = "source"
+node.override["ruby_installer"]["source_version"] = "1.9.3-p429"
+node.override["ruby_installer"]["source_rubygems_force"] = true
+
 include_recipe "ruby_installer"
 
-%w[
-  tmux
-  git
-  libxml2-dev
-  libxslt-dev
-].each do |pkg|
-  package pkg
-end
+package "tmux"
+package "git"
 
 gem_package "bundler"
 
