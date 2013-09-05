@@ -1,6 +1,6 @@
 # LXC-VM
 
-Builds a VirtualBox VM to run Docker/LXC containers within.
+Builds a VirtualBox VM to run LXC containers within (Docker & Vagabond).
 
 Using synced folders, the following are available within the VM:
 
