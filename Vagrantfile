@@ -1,7 +1,10 @@
 $install_chef = <<SCRIPT
-apt-get update
-apt-get install curl -y
-curl -L https://www.opscode.com/chef/install.sh | sudo bash
+if ! [ -d '/opt/chef' ];
+then
+    apt-get update
+    apt-get install curl -y
+    curl -L https://www.opscode.com/chef/install.sh | sudo bash
+fi
 SCRIPT
 
 Vagrant.configure("2") do |config|
@@ -11,7 +14,6 @@ Vagrant.configure("2") do |config|
 
   config.vm.provider :virtualbox do |vb|
     vb.customize ["modifyvm", :id, "--name", "lxc"]
-    vb.customize ["modifyvm", :id, "--cpus", "2"]
     vb.customize ["modifyvm", :id, "--memory", "3072"]
   end
 
