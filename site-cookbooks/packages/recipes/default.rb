@@ -53,6 +53,8 @@ apt_repository "docker" do
   components ["main"]
 end
 
+template "/etc/init/docker.conf"
+
 package "lxc-docker" do
-  options "--force-yes"
+  options "--force-yes -o Dpkg::Options::='--force-confdef'"
 end
