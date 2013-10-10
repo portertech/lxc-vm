@@ -48,9 +48,10 @@ modules "aufs" do
 end
 
 apt_repository "docker" do
-  uri "http://ppa.launchpad.net/dotcloud/lxc-docker/ubuntu"
-  distribution node["lsb"]["codename"]
+  uri "http://get.docker.io/ubuntu"
+  distribution "docker"
   components ["main"]
+  key "https://get.docker.io/gpg"
 end
 
 template "/etc/init/docker.conf"
