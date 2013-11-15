@@ -48,10 +48,10 @@ modules "aufs" do
 end
 
 apt_repository "docker" do
-  uri "http://get.docker.io/ubuntu"
+  uri node["packages"]["docker"]["repo"]
   distribution "docker"
   components ["main"]
-  key "https://get.docker.io/gpg"
+  key node["packages"]["docker"]["repo_key"]
 end
 
 template "/etc/init/docker.conf"

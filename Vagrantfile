@@ -17,10 +17,22 @@ Vagrant.configure("2") do |config|
     vb.customize ["modifyvm", :id, "--memory", "3072"]
   end
 
+  config.vm.network "private_network", :ip => "192.168.42.42"
+
   config.vm.provision :shell, :inline => $install_chef
 
   config.vm.provision :chef_solo do |chef|
     chef.cookbooks_path = ["cookbooks", "site-cookbooks"]
+    if ENV['DOCKER_TEST']
+      chef.json = {
+        :packages => {
+          :docker => {
+            :repo => "http://test.docker.io/ubuntu",
+            :repo_key => "https://test.docker.io/gpg"
+          }
+        }
+      }
+    end
     chef.add_recipe "packages"
   end
 

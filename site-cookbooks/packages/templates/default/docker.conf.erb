@@ -7,5 +7,5 @@ respawn
 
 script
     ulimit -n 65535
-    /usr/bin/docker -d
+    /usr/bin/docker -d -H unix:///var/run/docker.sock -H tcp://0.0.0.0:4242
 end script
