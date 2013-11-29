@@ -21,7 +21,7 @@ include_recipe "apt"
 include_recipe "ntp"
 
 node.override["ruby_installer"]["method"] = "source"
-node.override["ruby_installer"]["source_version"] = "1.9.3-p429"
+node.override["ruby_installer"]["source_version"] = "2.0.0-p353"
 node.override["ruby_installer"]["source_rubygems_force"] = true
 
 include_recipe "ruby_installer"
